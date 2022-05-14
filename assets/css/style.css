@@ -1,0 +1,24 @@
+* {
+    margin:0;
+    padding:0;
+    transition: all .3s ease;
+}
+
+body {
+    background-image: url('./../images/Shop-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    background-color: red;
+    position: static;
+    height:75px;;
+}
+
+nav ul {
+    list-style: none;
+}
