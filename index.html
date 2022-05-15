@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>Document</title>
+    <title>5e Shops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -36,12 +39,13 @@
             <button class="filter b-weapon" type="button">Weapons</button>
             <button class="filter b-armor" type="button">Armor</button>
             <button class="filter b-survival" type="button">Survival</button>
+            <input class="filter b-search" type="search" placeholder="Search">
         </section>
         <section class="item-list">
             <article class="item">
                 <p class="item-name">Sword</p>
                 <p class="item-price">10 GP</p>
-                <button class="add-to-cart" type="button">Add to Cart</button>
+                <button class="add-to-cart" type="button">+</button>
             </article>
         </section>
     </section>
@@ -53,7 +57,19 @@
         </aside>
 
         <aside class="cart">
+            <article class="cart-item">
+                <p class="cart-name">Sword</p>
+                <p class="cart-price">10 GP</p>
+                <div class="cart-buttons">
+                    <button class="add-more" type="button">+</button>
+                    <p class="quantity">1</p>
+                    <button class="remove-from-cart" type="button">-</button>
+                </div>
+            </article>
+        </aside>
 
+        <aside class="cart-total">
+            <p>Total:<span class="total-no">10</span> GP</p>
         </aside>
     </div>
 

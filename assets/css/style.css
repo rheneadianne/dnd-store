@@ -1,38 +1,68 @@
 :root {
-    --head-bg:#212223;
-    --head-a:#393d40;
-    --tan-full:#765B41;
-    --tan:rgba(118, 91, 65,.2);
-    --uic-full:#452923;
-    --uic:rgba(69, 41, 35,.9);
-    --lightest:#FFFEEF;
-    --light:#DBDAC5;
+    --head-bg: #212223;
+    --bg: rgba(33, 34, 35, .5);
+    --head-a: #393d40;
+    --tan-full: #765B41;
+    --tan: rgba(118, 91, 65, .3);
+    --uic-full: #452923;
+    --uic: rgba(69, 41, 35, .9);
+    --lightest: #FFFEEF;
+    --light-full: #DBDAC5;
+    --light: RGBA(219,218,197,.8);
 }
 
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     transition: all .3s ease;
 }
 
 a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
 body {
     background-image: url('./../images/Shop-1.jpg');
+    background-color: var(--bg);
+    background-blend-mode: multiply;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     width: 100vw;
     height: 100vh;
+    font-family: 'Boogaloo', cursive;
 }
+
+button {
+    font-family: 'Boogaloo', cursive;
+}
+
+input {
+    font-family: 'Boogaloo', cursive;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: var(--tan);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--uic);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--uic-full);
+  }
 
 header {
     background-color: var(--head-bg);
     position: sticky;
-    height:7vh;
+    height: 6vh;
     z-index: 50;
 }
 
@@ -40,20 +70,20 @@ nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    height: 7vh;
+    height: 6vh;
     justify-content: flex-start;
     align-items: center;
 }
 
 nav ul li a {
-    padding:1.5vh;
-    margin: 1.5vh;
+    padding: 1vh;
+    margin: 1vh;
     background-color: var(--head-a);
     border-radius: 5px;
     flex: 0 1 100%;
-    font-size: 1.5vh;
+    font-size: 1.4vh;
     color: var(--lightest);
-    }
+}
 
 .item-sell-space {
     position: absolute;
@@ -62,7 +92,7 @@ nav ul li a {
     background-color: var(--uic);
     height: 56vh;
     width: 66vw;
-    margin:1vh;
+    margin: 1vh;
     padding: 1vh;
     flex-direction: column;
     border-radius: 15px;
@@ -72,26 +102,69 @@ nav ul li a {
     height: 10%;
     display: flex;
     align-items: center;
+    width: 100%;
+    flex-direction: row;
 }
 
-.filter-buttons button {
-    height:50%;
-    padding:1%;
-    margin:1%
+.filter-buttons button, .filter-buttons .b-search {
+    height: 50%;
+    padding: 1%;
+    margin: 1%;
+    text-align: center;
+    line-height: .5;
+    background-color: var(--light-full);
+    border: 0px;
+}
+
+.filter-buttons .b-search {
+    margin-left: auto;
+    width: 25%;
 }
 
 .item-list {
-    height:90%;
+    height: 90%;
     background-color: var(--tan);
     padding: 1vh;
+    overflow-y: scroll;
 }
+
+.item {
+    display: flex;
+    align-items: center;
+    background-color: var(--light);
+}
+
+.item-name {
+    width: 56%;
+    padding: 1%;
+    background-color: var(--tan);
+    text-align: center;
+    margin: 1%;
+}
+
+.item-price {
+    width: 26%;
+    padding: 1%;
+    text-align: center;
+    margin: 1%;
+    background-color: var(--tan);
+}
+
+.add-to-cart {
+    width: 8%;
+    padding: 1%;
+    margin: 1%;
+    background-color: var(--tan);
+    border: 1px solid var(--tan);
+}
+
 
 .to-the-side {
     height: 100vh;
     width: 25vw;
     position: absolute;
-    right:0;
-    top:0;
+    right: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -100,19 +173,56 @@ nav ul li a {
 
 .shopkeeper {
     width: 90%;
-    height:30vh;
-    margin-bottom:1vh;
+    height: 30vh;
+    margin-bottom: 1vh;
 }
 
 .cart {
-    height: 58vh;
+    height: 48vh;
     width: 90%;
     background-color: var(--uic);
-    margin-bottom:1vh;
+    margin-bottom: 1vh;
     border-radius: 15px;
 }
 
-.item {
+.cart-item {
     display: flex;
-    justify-content: space-evenly ;
+    background-color: var(--light);
+    padding:2%;
+    margin: 5%;
+    text-align: center;
+    align-items: center;
+}
+
+.cart-name {
+    width: 40%;
+}
+
+.cart-price {
+    width: 20%;
+}
+
+.cart-buttons {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-buttons button {
+    padding: 0 5% 0 5%;
+    margin:5%;
+}
+
+.cart-total {
+    height: 9vh;
+    width: 90%;
+    margin-bottom: 1vh;
+    background-color: var(--head-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    letter-spacing: 5px;
+    color: var(--lightest);
 }
